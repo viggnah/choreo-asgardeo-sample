@@ -1,5 +1,10 @@
+DROP TABLE CRIMINAL_RECORDS;
+DROP TABLE SUPPORT_CASES;
+DROP TABLE CERTIFICATE_REQUEST;
+DROP TABLE NATIONAL_ID;
+
 CREATE TABLE NATIONAL_ID (
-    NationalId INT NOT NULL,
+    NationalId VARCHAR(15) NOT NULL,
     PRIMARY KEY(NationalId),
     FullName VARCHAR(255),
     HomeAddress VARCHAR(1000)
@@ -8,8 +13,9 @@ INSERT INTO NATIONAL_ID(NationalId, FullName, HomeAddress) VALUES(1, 'John Roe',
 INSERT INTO NATIONAL_ID(NationalId, FullName, HomeAddress) VALUES(2, 'May Johnson', 'No 125, Shoe Road, Colombo');
 
 
+
 CREATE TABLE CRIMINAL_RECORDS (
-    NationalId INT NOT NULL,
+    NationalId VARCHAR(15) NOT NULL,
 	CriminalCaseId INT NOT NULL,
     EntryDate DATE,
     PRIMARY KEY(NationalId, CriminalCaseId),
@@ -20,7 +26,7 @@ INSERT INTO CRIMINAL_RECORDS(NationalId, CriminalCaseId, EntryDate) VALUES(1, 10
 
 
 CREATE TABLE CERTIFICATE_REQUEST (
-    NationalId INT NOT NULL,
+    NationalId VARCHAR(15) NOT NULL,
 	RequestId INT NOT NULL IDENTITY,
     RequestStatus VARCHAR(100),
     PRIMARY KEY(NationalId, RequestId),
@@ -29,7 +35,7 @@ CREATE TABLE CERTIFICATE_REQUEST (
 
 
 CREATE TABLE SUPPORT_CASES (
-    NationalId INT NOT NULL,
+    NationalId VARCHAR(15) NOT NULL,
 	SupportCaseId INT NOT NULL IDENTITY,
     CaseDescription VARCHAR(2000),
     CaseStatus VARCHAR(100),
