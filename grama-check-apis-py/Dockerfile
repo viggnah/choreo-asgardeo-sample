@@ -1,7 +1,7 @@
 FROM python:3.11.1-slim
 
 ARG USERNAME=john
-ARG USER_UID=8877
+ARG USER_UID=13100
 ARG USER_GID=$USER_UID
 
 # Create a non-root user
