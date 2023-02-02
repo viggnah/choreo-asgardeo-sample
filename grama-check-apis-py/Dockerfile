@@ -30,6 +30,8 @@ RUN pip3 install -r requirements.txt
 # Switch to non-root user after doing all the root user stuff with apt-get
 USER 13100
 
-CMD [ "flask", "--app", "azure-sql-test.py", "--debug", "run", "--host=0.0.0.0", "--port=5100"]
+EXPOSE 5000
 
+CMD [ "flask", "--app", "azure-sql-test.py", "run", "--host=0.0.0.0"]
+# CMD [ "flask", "--app", "azure-sql-test.py", "--debug", "run", "--host=0.0.0.0", "--port=5100"]
 # CMD ["python3", "azure-sql-test.py"]
